@@ -3,6 +3,7 @@
 Blockchain has the potential to change the way that the world approaches data. Develop Blockchain skills by understanding the data model behind Blockchain by developing your own simplified private blockchain.
 
 **Transaction Hash:** 0x9118f6fff1ae463773803061043a954256896c3c7ce475181b374fa90d13034e
+
 **Contract Address:** 0x45e1a5b6c17e91059a472dab36915123a89b179b
 
 ## Getting Started
@@ -11,7 +12,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Installing Node and NPM is pretty straightforward using the installer package available from the (Node.js® web site) https://nodejs.org/en/.
+Installing Node and NPM is pretty straightforward using the installer package available from the (Node.jsÂ® web site) https://nodejs.org/en/.
 
 ### Tech
 This project uses open source projects to work properly:
