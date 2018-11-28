@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Star Notary</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+				<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+				<script src="starNotaryABI.js"></script>
+				<script src="index.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Star Notary</h1>
+
+            <div class="row">
+                <label class="bold">Star Name:</label>
+                <label id="star-name"></label>
+								<input type="text" id="star-name-input"></input>
+            </div>
+            <div class="row">
+                <label class="bold">Star Dec:</label>
+                <label id="star-dec"></label>
+								<input type="text" id="star-dec-input"></input>
+            </div>
+            <div class="row">
+                <label class="bold">Star Mag:</label>
+                <label id="star-mag"></label>
+								<input type="text" id="star-mag-input"></input>
+            </div>
+            <div class="row">
+                <label class="bold">Star Cent:</label>
+                <label id="star-cent"></label>
+								<input type="text" id="star-cent-input"></input>
+            </div>
+            <div class="row">
+                <label class="bold">Star Story:</label>
+                <label id="star-story"></label>
+								<input type="text" id="star-story-input"></input>
+            </div>
+
+            <div class="row">
+                <label class="bold">Star Owner:</label>
+                <label id="star-owner"></label>
+            </div>
+
+            <button id="claim-button" onclick="claimButtonClicked()">Claim Star</button>
+        </div>
+
+				<div id="output"></div>
+
+				<div class="container">
+            <h1>Retrieve Star by Token ID</h1>
+
+            <div class="row">
+                <label class="bold">Token ID:</label>
+                <label id="star-id-hex"></label>
+                <input type="text" id="star-tokenid-input">
+            </div>
+
+            <button id="star-button" onclick="starButtonClicked()">Retrieve Star</button>
+        </div>
+
+				<div id="retrieve-output"></div>
+
+    </body>
+</html>
