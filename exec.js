@@ -8,7 +8,7 @@ const provider = new HDWalletProvider(mnemonic, host)
 const web3 = new Web3(provider)
 
 const address = '0x41F565D0c30d061a74A06297A2Cf0C286B2c890A'
-const contractAddress = '0x45e1a5b6c17e91059a472dab36915123a89b179b'
+const contractAddress = '0x58c6bd886d111f1329ebe89de561516a128adcc4'
 
 const starPrice = web3.utils.toWei('.01', 'ether')
 const starName = "Star power 103!";
@@ -17,21 +17,13 @@ const starCent = "ra_032.151";
 const starDec = "dec_121.871";
 const starMag =  "mag_245.971";
 
-const contractOptions = {
-	address: contractAddress,
-    jsonInterface: starNotaryABI,
-    from: address,
-	gasPrice: '10000000000',
-	gas: 1000000
-}
-
 const transactionOptions = {
     from: address,
 	gasPrice: '10000000000',
 	gas: 1000000,
 }
 
-const contract = new web3.eth.Contract(starNotaryABI, contractAddress, contractOptions)
+const contract = new web3.eth.Contract(starNotaryABI, contractAddress)
 
 const createStar = async function() {
 	console.log(`Calling create star method`);

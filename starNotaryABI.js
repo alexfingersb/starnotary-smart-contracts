@@ -56,6 +56,49 @@ const starNotaryABI =	[
     "type": "function"
   },
   {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "",
+        "type": "int256"
+      }
+    ],
+    "name": "indexedToStarInfo",
+    "outputs": [
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "name": "story",
+        "type": "string"
+      },
+      {
+        "name": "ra",
+        "type": "string"
+      },
+      {
+        "name": "dec",
+        "type": "string"
+      },
+      {
+        "name": "mag",
+        "type": "string"
+      },
+      {
+        "name": "registered",
+        "type": "bool"
+      },
+      {
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "constant": false,
     "inputs": [
       {
@@ -198,45 +241,6 @@ const starNotaryABI =	[
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "constant": true,
-    "inputs": [
-      {
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "name": "mappingStars",
-    "outputs": [
-      {
-        "name": "name",
-        "type": "string"
-      },
-      {
-        "name": "story",
-        "type": "string"
-      },
-      {
-        "name": "ra",
-        "type": "string"
-      },
-      {
-        "name": "dec",
-        "type": "string"
-      },
-      {
-        "name": "mag",
-        "type": "string"
-      },
-      {
-        "name": "registered",
-        "type": "bool"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -398,7 +402,7 @@ const starNotaryABI =	[
         "type": "uint256"
       }
     ],
-    "name": "getStarsForSale",
+    "name": "starsForSale",
     "outputs": [
       {
         "name": "price",
@@ -440,19 +444,11 @@ const starNotaryABI =	[
     "constant": true,
     "inputs": [
       {
-        "name": "_ra",
-        "type": "string"
-      },
-      {
-        "name": "_dec",
-        "type": "string"
-      },
-      {
-        "name": "_mag",
-        "type": "string"
+        "name": "_tokenId",
+        "type": "uint256"
       }
     ],
-    "name": "getStar",
+    "name": "tokenIdToStarInfo",
     "outputs": [
       {
         "name": "name",
@@ -473,6 +469,49 @@ const starNotaryABI =	[
       {
         "name": "mag",
         "type": "string"
+      },
+      {
+        "name": "tokenId",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_index",
+        "type": "int256"
+      }
+    ],
+    "name": "getStarByIndex",
+    "outputs": [
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "name": "story",
+        "type": "string"
+      },
+      {
+        "name": "ra",
+        "type": "string"
+      },
+      {
+        "name": "dec",
+        "type": "string"
+      },
+      {
+        "name": "mag",
+        "type": "string"
+      },
+      {
+        "name": "tokenId",
+        "type": "uint256"
       }
     ],
     "payable": false,

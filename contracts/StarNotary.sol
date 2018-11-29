@@ -11,6 +11,7 @@ contract StarNotary is ERC721 {
         string dec;
         string mag;
         bool registered;
+        uint256 tokenId;
     }
 
     mapping(int256 => Star) public indexedToStarInfo;
@@ -30,7 +31,7 @@ contract StarNotary is ERC721 {
 
     function createStar(string _name, string _story, string _ra, string _dec, string _mag) public uniqueStar(_ra, _dec, _mag) {
         uint256 tokenId = createTokenId(_ra, _dec, _mag);
-        Star memory newStar = Star(_name, _story, _ra, _dec, _mag, true);
+        Star memory newStar = Star(_name, _story, _ra, _dec, _mag, true, tokenId);
 
         tokenIdToStarInfo[tokenId] = newStar;
         indexedToStarInfo[index++] = newStar;
@@ -71,19 +72,20 @@ contract StarNotary is ERC721 {
         return tokenIdToStarInfo[tokenId].registered;
     }
 
-    function getStar(string _ra, string _dec, string _mag) public view returns (string name, string story, string ra, string dec, string mag) {
-        uint256 tokenId = createTokenId(_ra, _dec, _mag);
-        Star memory star = tokenIdToStarInfo[tokenId];
-        return (star.name, star.story, star.ra, star.dec, star.mag);
+    function tokenIdToStarInfo(uint256 _tokenId) public view
+        returns (string name, string story, string ra, string dec, string mag, uint256 tokenId) {
+        // uint256 tokenId = createTokenId(_ra, _dec, _mag);
+        Star memory star = tokenIdToStarInfo[_tokenId];
+        return (star.name, star.story, star.ra, star.dec, star.mag, star.tokenId);
     }
 
-    function getStarByIndex(int256 _index) public view returns (string name, string story, string ra, string dec, string mag) {
+    function getStarByIndex(int256 _index) public view
+        returns (string name, string story, string ra, string dec, string mag, uint256 tokenId) {
         Star memory star = indexedToStarInfo[_index];
-        return (star.name, star.story, star.ra, star.dec, star.mag);
+        return (star.name, star.story, star.ra, star.dec, star.mag, star.tokenId);
     }
 
     function createTokenId(string _ra, string _dec, string _mag) public pure returns (uint256) {
         return uint256(keccak256(abi.encodePacked(_ra, _dec, _mag)));
     }
-
 }
