@@ -64,7 +64,7 @@ To test code:
 1: Open a command prompt or shell terminal after install truffle.
 2: Execute ganache cli with mnemonic
 ```
-ganache-cli --mnemonic 'around blame enrich very nuclear tuition dolphin fury wife suffer treat danger'
+ganache-cli --mnemonic 'put you mnemonic here'
 ```
 2: Execute test with truffle on local machine
 ```
